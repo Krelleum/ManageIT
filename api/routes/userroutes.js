@@ -67,7 +67,7 @@ router.post('/login' (req, res, next => {
 
 // Add Created Order
 
-router.patch('/patchcreatedorders' (req, res, next => {
+router.patch('/createdorders' (req, res, next => {
     User.findOneAndUpdate({userid: req.body.userid}, {$push: {createdorders: req.body.createdorder}})
     .then(result => {
         res.status(200).json(result);
@@ -79,7 +79,7 @@ router.patch('/patchcreatedorders' (req, res, next => {
 
 // Add Fulfilled Order
 
-router.patch('/patchfulfilledorders' (req, res, next => {
+router.patch('/fulfilledorders' (req, res, next => {
     User.findOneAndUpdate({userid: req.body.userid}, {$push: {fulfilledorders: req.body.fulfilledorder}})
     .then(result => {
         res.status(200).json(result);
@@ -91,7 +91,7 @@ router.patch('/patchfulfilledorders' (req, res, next => {
 
 // Add Commented Order
 
-router.patch('/patchcommentedorders' (req, res, next => {
+router.patch('/commentedorders' (req, res, next => {
     User.findOneAndUpdate({userid: req.body.userid}, {$push: {commentedorders: req.body.commentedorder}})
     .then(result => {
         res.status(200).json(result);
