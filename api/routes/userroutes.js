@@ -103,6 +103,18 @@ router.patch('/commentedorders' (req, res, next => {
 
 
 
+// delete User
+
+router.delete('/deleteuser' (req, res, next => {
+    User.findOneAndRemove({userid: req.body.userid})
+    .then(result => {
+        res.status(200).json(result)
+    })
+    .catch(err => {
+        res.status(500).json(err)
+    })
+}))
+
 
 
 
