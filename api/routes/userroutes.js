@@ -33,9 +33,11 @@ router.post('/create', (req, res, next) => {
             newUser.save()
             .then(result => {
                 res.status(201).json(result);
+                console.log('User created succesfully')
             })
             .catch(err => {
                 res.status(500).json(err);
+                console.log('User creation failed')
             })
         }
     }).catch(err => {
@@ -48,72 +50,83 @@ router.post('/create', (req, res, next) => {
 
 // Login 
 
-router.post('/login' (req, res, next => {
+router.post('/login', (req, res, next) => {
 
     User.findOne({username: req.body.username})
     .exec()
     .then(user => {
         if(user && user.password === req.body.password){
+            console.log('Login Authorized');
             return res.status(200).json({message: 'Login Authorized'});
         }
         else{
             res.status(401).json({message: 'Unauthorized'});
+            console.log('Login Failed');
         }
     }).catch(err => {
         res.status(500).json(err);
+        console.log('Error while loging in')
     })
-}));
+});
 
 
 // Add Created Order
 
-router.patch('/createdorders' (req, res, next => {
+router.patch('/createdorders', (req, res, next) => {
     User.findOneAndUpdate({userid: req.body.userid}, {$push: {createdorders: req.body.createdorder}})
     .then(result => {
         res.status(200).json(result);
+        console.log('created Orders were updated')
     })
     .catch(err => {
         res.status(500).json(err);
+        console.log('Failed to update created Orders')
     })
-}));
+});
 
 // Add Fulfilled Order
 
-router.patch('/fulfilledorders' (req, res, next => {
+router.patch('/fulfilledorders', (req, res, next) => {
     User.findOneAndUpdate({userid: req.body.userid}, {$push: {fulfilledorders: req.body.fulfilledorder}})
     .then(result => {
         res.status(200).json(result);
+        console.log('fulfilled Orders were updated');
     })
     .catch(err =>{
         res.status(500).json(err);
+        console.log('failed to update fulfilled Orders');
     })
-}));
+});
 
 // Add Commented Order
 
-router.patch('/commentedorders' (req, res, next => {
+router.patch('/commentedorders', (req, res, next) => {
     User.findOneAndUpdate({userid: req.body.userid}, {$push: {commentedorders: req.body.commentedorder}})
     .then(result => {
         res.status(200).json(result);
+        console.log('commented Orders were updated');
     })
     .catch(err => {
         res.status(500).json(err);
+        console.log('failed to update commented orders');
     })
-}))
+});
 
 
 
 // delete User
 
-router.delete('/deleteuser' (req, res, next => {
+router.delete('/deleteuser', (req, res, next) => {
     User.findOneAndRemove({userid: req.body.userid})
     .then(result => {
         res.status(200).json(result)
+        console.log('User was succesfully deleted')
     })
     .catch(err => {
         res.status(500).json(err)
+        console.log('failed to delete User')
     })
-}))
+});
 
 
 
