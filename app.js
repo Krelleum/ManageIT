@@ -50,11 +50,7 @@ app.use('/comment', commentRoute);
 
 // Test response Middleware
 
-app.use((req, res, next) => {
-    res.status(200).json({
-        message: 'Yessss'
-    })
-})
+
 
 // Middleware
 

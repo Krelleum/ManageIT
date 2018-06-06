@@ -79,6 +79,22 @@ router.patch('/deletemessage', (req, res, next) => {
             res.status(500).json(err);
             console.log('message could not deleted')
         })
+});
+
+
+// Post Request to get all Messages for your Inbox
+
+router.post('/getmessages', (req, res, next) => {
+    Inbox.findOne({inboxid: req.body.inboxid})
+    .then(result => {
+        res.status(200).json(result.messages);
+        console.log('inbox found - messages downloaded')
+
+    })
+    .catch(err => {
+        res.status(500).json(err)
+        console.log('unable to download your messages')
+    })
 })
 
 
