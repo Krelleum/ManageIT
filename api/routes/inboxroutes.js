@@ -13,7 +13,8 @@ router.post('/create', (req, res, next) => {
     
     const newInbox = new Inbox({
         inboxid: new mongoose.Types.ObjectId(),
-        userid: req.body.userid
+        userid: req.body.userid,
+        ownername: req.body.ownername
     });
     
     newInbox.save()
@@ -29,11 +30,18 @@ router.post('/create', (req, res, next) => {
     
 });
 
+
+
+// Sends Message
+// Creates a new Message Object literal in the specific Inbox
+
+
 router.patch('/sendmessage', (req, res, next) => {
     
     const newMessage = {
         senderid: req.body.senderid,
         messagetext: req.body.messagetext,
+        messageid: new mongoose.Types.ObjectId(),
     }
     
     
@@ -49,6 +57,29 @@ router.patch('/sendmessage', (req, res, next) => {
     })
 })
 
+
+
+// Delete Message
+// NOT WORKING !!!!!
+
+router.patch('/deletemessage', (req, res, next) => {
+
+    
+
+    Inbox.update(
+        { inboxid: req.body.inboxid },
+        { $pull: {"messages.messageid": req.body.messageid}}
+    )
+    
+        .then(result => {
+            res.status(200).json(result);
+            console.log('message was deleted')
+        })
+        .catch(err => {
+            res.status(500).json(err);
+            console.log('message could not deleted')
+        })
+})
 
 
 
