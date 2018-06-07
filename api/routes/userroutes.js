@@ -7,7 +7,8 @@ const router = express.Router();
 // Model Import
 const User = require('../models/usermodel');
 
-
+// JSON WEB TOKEN
+const jwt = require('jsonwebtoken');
 
 // Create new User
 
@@ -56,9 +57,11 @@ router.post('/login', (req, res, next) => {
     .exec()
     .then(user => {
         if(user && user.password === req.body.password){
-            console.log('Login Authorized');
-            return res.status(200).json({message: 'Login Authorized'});
-        }
+         // JSON WEB TOKEN
+            var token = jwt.sign({data: user.username}, 'ManageIt', {expiresIn: '1h'})
+            res.status(200).json({message: 'Login Authorized', token: token});
+            console.log('Login Authorized - Token signed');
+         }
         else{
             res.status(401).json({message: 'Unauthorized'});
             console.log('Login Failed');
