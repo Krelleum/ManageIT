@@ -59,7 +59,7 @@ router.post('/login', (req, res, next) => {
         if(user && user.password === req.body.password){
          // JSON WEB TOKEN
             var token = jwt.sign({data: user.username}, 'ManageIt', {expiresIn: '1h'})
-            res.status(200).json({message: 'Login Authorized', token: token});
+            res.status(200).json({message: 'Login Authorized', token: token, userid: user.userid});
             console.log('Login Authorized - Token signed');
          }
         else{
@@ -79,7 +79,7 @@ router.post('/verify', (req, res, next) => {
     
 
     try {
-        const decoded = jwt.verify(req.body.authorization, 'ManageIt');
+        jwt.verify(req.headers.authorization, 'ManageIt');
         res.status(200).json({ message: 'Login authorized' })
         
     }

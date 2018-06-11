@@ -21,8 +21,8 @@ componentWillMount(){
 }
 
 getLoginState(){
-  var token = sessionStorage.getItem('tkey');
-  
+  var token = localStorage.getItem('tkey');
+  console.log(token);
 
   axios({
     method: 'post',
@@ -30,12 +30,14 @@ getLoginState(){
     headers:
       {
         'Content-Type': 'application/json',
-        'Authorization': token,
+        'Authorization': localStorage.getItem('tkey'),
       }
   })
     .then(response => {
+      console.log(response.status)
       if(response.status === 200){
         this.setAuthorized();
+        
       }
       else if(response.status === 401){
         this.setUnauthorized();
