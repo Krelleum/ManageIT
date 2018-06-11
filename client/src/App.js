@@ -1,35 +1,77 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import { Link, Route, Switch } from 'react-router-dom';
-import SideBarContainer from './components/Navigation/sidebarcontainer';
-import { HashRouter } from 'react-router-dom';
 
-import DashBoardContainer from './components/Dashboard/dashboardcontainer';
-import ShowUserContainer from './components/User/showusercontainer';
+import AppContainer from './components/AppContainer/AppContainer';
+import LoginContainer from './components/Login/logincontainer';
+
+
 
 class App extends Component {
 
+constructor(props){
+  super(props);
+  this.state = {
+    loginState: false,
+  }
+}
+
+componentWillMount(){
+  this.getLoginState()
+}
+
+getLoginState(){
+  var token = sessionStorage.getItem('tkey');
+  
+
+  axios({
+    method: 'post',
+    url: 'http://localhost:5000/user/verify',
+    headers:
+      {
+        'Content-Type': 'application/json',
+        'Authorization': token,
+      }
+  })
+    .then(response => {
+      if(response.status === 200){
+        this.setAuthorized();
+      }
+      else if(response.status === 401){
+        this.setUnauthorized();
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      this.setUnauthorized();
+    })
+}
 
 
+checkLogin(){
+  
+  if(this.state.loginState === true){
+    return <AppContainer/>
+  }
+  else{
+    return <LoginContainer/>
+  }
+}
 
+
+setAuthorized(){
+  this.setState({loginState: true})
+}
+
+setUnauthorized(){
+  this.setState({loginState: false})
+}
 
   render() {
 
     return (
-      <div>
-
-
-        
-        <HashRouter>
-          <div>
-            <SideBarContainer />
-            <Route path='/dashboard' component={DashBoardContainer}></Route>
-            <Route path='/user' component={ShowUserContainer}></Route>
-          </div>
-        </HashRouter>
-
-      </div>
+      <div>{this.checkLogin()}</div>
+      
 
     );
   }

@@ -73,6 +73,26 @@ router.post('/login', (req, res, next) => {
 });
 
 
+// Veryfiy Token
+
+router.post('/verify', (req, res, next) => {
+    
+
+    try {
+        const decoded = jwt.verify(req.body.authorization, 'ManageIt');
+        res.status(200).json({ message: 'Login authorized' })
+        
+    }
+    catch (err) {
+
+        return res.status(401).json({ message: 'unauthorized' })
+
+    }
+
+
+
+});
+
 // Add Created Order
 
 router.patch('/createdorders', (req, res, next) => {
