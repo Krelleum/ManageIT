@@ -2,13 +2,24 @@
     padding-left: 70px;
 }
 
+@media (max-width: 768px) {
+.dashboardcontainer{
+    padding-left: 10px;
+}
+}
+
 .dashboarduserwrapper{
     /* background: rgba(255,255,255, 0.3); */
-    border-left: 1px dashed rgba(255,255,255, 0.3);
-    border-top: 1px dashed rgba(255,255,255, 0.3);
-    border-bottom:1px dashed rgba(255,255,255, 0.3);
+    /* border-left: 1px dashed grey;
+    border-top: 1px dashed grey;
+    border-bottom:1px dashed grey; */
+    
+    background: transparent;
 }
 
 .dashboarduserwrapper:hover{
     background: var(--backgroundhover);
+    color: white;
+    
+    
 }

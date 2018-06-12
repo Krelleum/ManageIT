@@ -9,14 +9,14 @@ p {
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.7em;
-  color: #999;
+  
 }
 
 a,
 a:hover,
 a:focus {
   text-decoration: none;
-  transition: all 0.3s;
+  
 }
 
 .navbar {
@@ -99,8 +99,8 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-  color: #7386D5;
-  background: #fff;
+  color: grey;
+  background:var(--backgroundhover);
 }
 
 #sidebar ul li.active > a,

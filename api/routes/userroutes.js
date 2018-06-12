@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 
 // Create new User
 
-router.post('/create', (req, res, next) => {
+router.post('/signup', (req, res, next) => {
     
     
     User.findOne({username: req.body.username})

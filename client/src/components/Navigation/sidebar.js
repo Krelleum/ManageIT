@@ -3,6 +3,12 @@ import './sidebar.css';
 import { Link } from 'react-router-dom';
 
 class SideBar extends Component {
+    
+
+    logOut(){
+        localStorage.clear();
+        window.location.reload()
+    }
 
 
     render() {
@@ -27,15 +33,19 @@ class SideBar extends Component {
                         </li>
                         
                         <li>
-                            <Link to='User'><i className="material-icons">person</i></Link>
+                            <Link to='user'><i className="material-icons">person</i></Link>
                         </li>
 
                         <li>
-                            <Link to='Order'><i className="material-icons">assignment</i></Link>
+                            <Link to='orders'><i className="material-icons">assignment</i></Link>
                         </li>
 
                         <li>
                             <Link to='Customer'><i className="material-icons">people</i></Link>
+                        </li>
+
+                        <li onClick={this.logOut.bind(this)}>
+                            <a><i className="material-icons">power_settings_new</i></a>
                         </li>
 
                     </ul>

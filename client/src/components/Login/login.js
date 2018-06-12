@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import SuccessHelper from '../Helper/successhelper';
+import ErrorHelper from '../Helper/errorhelper';
 
 class LogIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
             loginuser: 'init',
-            loginpassword: 'init'
+            loginpassword: 'init',
+            helper: 'none',
+            helpermessage: 'none',
         }
     }
 
@@ -51,27 +54,50 @@ class LogIn extends Component {
                     localStorage.setItem('tkey', response.data.token)
                     localStorage.setItem('username', this.state.loginuser)
                     localStorage.setItem('userid', response.data.userid)
-                    
+                    this.setState({
+                        helper: 'success',
+                        helpermessage: 'Login was succesful!'
+                    })
+                    window.location.reload()
                 }
                 else {
-                    alert('UNAUTHORIZED - WRONG USERNAME OR PASSWORD')
+                    
+                    this.setState({
+                        helper: 'error',
+                        helpermessage: 'UNAUTHORIZED - WRONG USERNAME OR PASSWORD'
+                    })
                 }
             })
 
 
             .catch(err => {
-                console.log(err)
-                alert('UNAUTHORIZED - WRONG USERNAME OR PASSWORD')
+                console.log(err);
+                this.setState({
+                    helper: 'error',
+                    helpermessage: 'UNAUTHORIZED - WRONG USERNAME OR PASSWORD'
+                })
             })
     }
 
+
+    renderHelper(){
+        var helperState = this.state.helper;
+
+        if(helperState === 'none'){
+            return null
+        }else if(helperState === 'success'){
+            return <SuccessHelper successmessage= {this.state.helpermessage}/>
+        }else if(helperState === 'error'){
+            return <ErrorHelper errormessage={this.state.helpermessage}/>
+        }
+    }
 
 
 
 
     render() {
         return (
-            <div>
+            
                 <div className='col-md-12 loginwrapper'>
                     <div className='loginheader'>
                         <p>Login</p>
@@ -84,10 +110,12 @@ class LogIn extends Component {
                         <input type='submit' id='loginbutton' onClick={this.handleClick.bind(this)}></input>
 
                     </div>
-
+                    <div className='loginfeedback'>
+                        {this.renderHelper()}
+                    </div>
 
                 </div>
-            </div>
+            
         )
     }
 }

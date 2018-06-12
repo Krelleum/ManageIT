@@ -12,9 +12,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: white;
+  color: black;
+  background-color: transparent !important;
 }
 
 html{
-  background-image:url('images/background.jpg');
+  background-image:url('images/background1.jpg');
+  background-size: cover;
+  
 }
