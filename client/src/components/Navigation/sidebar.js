@@ -15,7 +15,7 @@ class SideBar extends Component {
 
                 <nav id="sidebar">
                     <div className="sidebar-header">
-                        <h3>ManageIT</h3>
+                        <h3>M</h3>
                     </div>
 
                     <ul className="list-unstyled components">
@@ -23,11 +23,19 @@ class SideBar extends Component {
                        
                         
                         <li>
-                            <Link to='dashboard'>Dashboard</Link>
+                            <Link to='dashboard'><i className="material-icons">dashboard</i></Link>
                         </li>
                         
                         <li>
-                            <Link to='User'>User</Link>
+                            <Link to='User'><i className="material-icons">person</i></Link>
+                        </li>
+
+                        <li>
+                            <Link to='Order'><i className="material-icons">assignment</i></Link>
+                        </li>
+
+                        <li>
+                            <Link to='Customer'><i className="material-icons">people</i></Link>
                         </li>
 
                     </ul>

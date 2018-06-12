@@ -51,6 +51,7 @@ class LogIn extends Component {
                     localStorage.setItem('tkey', response.data.token)
                     localStorage.setItem('username', this.state.loginuser)
                     localStorage.setItem('userid', response.data.userid)
+                    
                 }
                 else {
                     alert('UNAUTHORIZED - WRONG USERNAME OR PASSWORD')

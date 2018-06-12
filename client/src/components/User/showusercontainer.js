@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './showuser.css';
 
 class ShowUserContainer extends Component {
 
@@ -7,7 +7,11 @@ class ShowUserContainer extends Component {
 
     render() {
         return (
-            <h1>USER</h1>
+            <div className='col-md-12 showusercontainer'>
+                <h1>USER</h1>
+            
+            </div>
+            
         )
     }
 

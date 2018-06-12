@@ -1,0 +1,14 @@
+.dashboardcontainer{
+    padding-left: 70px;
+}
+
+.dashboarduserwrapper{
+    /* background: rgba(255,255,255, 0.3); */
+    border-left: 1px dashed rgba(255,255,255, 0.3);
+    border-top: 1px dashed rgba(255,255,255, 0.3);
+    border-bottom:1px dashed rgba(255,255,255, 0.3);
+}
+
+.dashboarduserwrapper:hover{
+    background: var(--backgroundhover);
+}
