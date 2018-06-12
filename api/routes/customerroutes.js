@@ -24,7 +24,6 @@ router.post('/createcustomer', (req, res, next) => {
                     customerid: new mongoose.Types.ObjectId(),
                     name: req.body.name,
                     street: req.body.street,
-                    building: req.body.building,
                     room: req.body.room,
                     phone: req.body.phone,
                     customeremail: req.body.customeremail,
@@ -97,6 +96,31 @@ router.patch('/customercontacts', (req, res, next) => {
         })
 });
 
+
+
+// Search Customer
+
+router.get('/searchcustomer/:customername', (req, res, next) => {
+    
+    var customername = req.params.customername;
+    console.log(customername);
+    Customer.findOne({name: customername})
+    
+    .then(result => {
+        console.log(result);
+        if(result === null){
+            
+            res.status(404).json(result);
+        }
+        else{
+            res.status(200).json(result);
+        }
+        
+    })
+    .catch(err => {
+        res.status(404).json(err);
+    })
+});
 
 
 

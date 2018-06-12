@@ -4,7 +4,6 @@ const customerSchema = mongoose.Schema({
     customerid: mongoose.Schema.Types.ObjectId,
     name: {type: String, required: true},
     street: String,
-    building: String,
     room: String,
     phone: String,
     customeremail: String,

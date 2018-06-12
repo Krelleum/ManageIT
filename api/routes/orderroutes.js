@@ -14,12 +14,10 @@ router.post('/createorder', (req, res, next) => {
         orderid: new mongoose.Types.ObjectId(),
         customerid: req.body.customerid,
         userid: req.body.userid,
-        orderstatus: req.body.orderstatus,
         ordertype: req.body.ordertype,
         orderheading: req.body.orderheading,
         ordershort: req.body.ordershort,
         orderdescription: req.body.orderdescription,
-        ordernotes: req.body.ordernotes,
         orderpriority: req.body.orderpriority,
         
     })

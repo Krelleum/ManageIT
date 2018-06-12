@@ -1,6 +1,8 @@
 :root{
 --cardbackground: linear-gradient(1deg, rgb(74, 195, 255) 0%,rgb(74, 195, 255) 100%);
---backgroundhover: linear-gradient(45deg, rgba(104,211,130,1) 0%,rgba(73,177,150,1) 100%);
+--background: linear-gradient(45deg, rgba(104,211,130,1) 0%,rgba(73,177,150,1) 100%);
+--backgroundhover: linear-gradient(45deg, rgb(120, 221, 145) 0%,rgb(92, 194, 167)100%);
+
 }
 
 
@@ -12,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: black;
+  color: white;
   background-color: transparent !important;
 }
 
@@ -20,4 +22,19 @@ html{
   background-image:url('images/background1.jpg');
   background-size: cover;
   
+}
+
+input{
+  border:none;
+  padding: 8px;
+  padding-left: 5px;
+  margin-top: 3px;
+  min-width: 250px;
+  
+}
+
+
+button {
+  border: none;
+  background: grey;
 }

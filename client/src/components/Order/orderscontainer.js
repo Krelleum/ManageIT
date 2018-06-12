@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './orderscontainer.css';
 
+import OrderForm from './Orderform/orderform';
+
 class OrdersContainer extends Component{
     constructor(props){
         super(props);
@@ -16,7 +18,7 @@ class OrdersContainer extends Component{
                 <h1>ORDERS</h1>
                 <div className='row'>
                     <div className='col-md-4 createorderscontainerwrapper'>
-                        
+                        <OrderForm/>
                     
                     </div>
                     <div className='col-md-4 openorderscontainerwrapper'>

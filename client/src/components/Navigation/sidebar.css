@@ -79,7 +79,7 @@ a:focus {
   padding: 20px;
   padding-left: 15px;
   padding-top: 10px;
-  background: var(--backgroundhover);
+  background: var(--background);
 }
 
 #sidebar ul.components {
@@ -100,7 +100,7 @@ a:focus {
 
 #sidebar ul li a:hover {
   color: grey;
-  background:var(--backgroundhover);
+  background:var(--background);
 }
 
 #sidebar ul li.active > a,
