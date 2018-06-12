@@ -1,0 +1,11 @@
+.showopenorderwrapper:hover{
+    background: var(--backgroundhover);
+    min-height: 785px;
+    
+}
+
+.showclosedorderwrapper:hover{
+    background: var(--backgroundhover);
+    min-height: 785px;
+    
+}

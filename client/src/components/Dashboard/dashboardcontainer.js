@@ -52,8 +52,7 @@ componentDidMount(){
             
             <div className='row'>
                 <DashBoardUser data={this.state.data}/>
-                    <DashBoardUser data={this.state.data} />
-                    <DashBoardUser data={this.state.data} />
+                    
             </div>
             
             </div>

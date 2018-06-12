@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './orderscontainer.css';
 
 import OrderForm from './Orderform/orderform';
+import ShowOpenOrders from './showorder/showopenorders';
+import ShowClosedOrders from './showorder/showclosedorders';
 
 class OrdersContainer extends Component{
     constructor(props){
@@ -22,10 +24,10 @@ class OrdersContainer extends Component{
                     
                     </div>
                     <div className='col-md-4 openorderscontainerwrapper'>
-                    
+                        <ShowOpenOrders/>
                     </div>
                     <div className='col-md-4 closedorderscontainerwrapper'>
-                    
+                        <ShowClosedOrders />
                     
                     </div>
                 </div>

@@ -9,10 +9,7 @@
 }
 
 .dashboarduserwrapper{
-    /* background: rgba(255,255,255, 0.3); */
-    /* border-left: 1px dashed grey;
-    border-top: 1px dashed grey;
-    border-bottom:1px dashed grey; */
+    background: grey;
     
     
 }
@@ -20,6 +17,7 @@
 .dashboarduserwrapper:hover{
     background: var(--backgroundhover);
     color: white;
+    
     
     
 }

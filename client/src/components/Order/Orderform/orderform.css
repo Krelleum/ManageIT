@@ -1,6 +1,6 @@
 .orderformwrapper{
     color: white;
-    background: transparent;
+    
     padding-bottom: 10px;
 }
 
@@ -22,7 +22,7 @@
 
 .orderform h4{
     margin-top: 20px !important;
-    border-bottom: 1px solid white;
+    
 }
 
 .orderform textarea{

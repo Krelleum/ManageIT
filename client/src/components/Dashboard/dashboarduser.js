@@ -37,7 +37,7 @@ class DashBoardUser extends Component{
                     </li>
 
                     <li>
-                        <Link to='Order'><i className="material-icons">assignment</i></Link>
+                        <Link to='orders'><i className="material-icons">assignment</i></Link>
                     </li>
 
                     <li>

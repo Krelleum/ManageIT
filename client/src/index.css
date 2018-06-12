@@ -16,12 +16,15 @@ body {
   font-family: sans-serif;
   color: white;
   background-color: transparent !important;
+   
 }
 
 html{
-  background-image:url('images/background1.jpg');
-  background-size: cover;
+
+  /* background-image:url('images/background1.jpg'); */
   
+  background: #464646;
+  background-size: fill;
 }
 
 input{
@@ -36,5 +39,8 @@ input{
 
 button {
   border: none;
-  background: grey;
+  background: none;
+  border: 1px solid white;
+  padding-left: 6px;
+  padding-right: 6px;
 }
