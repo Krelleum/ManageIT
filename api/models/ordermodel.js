@@ -10,7 +10,7 @@ const orderSchema = mongoose.Schema({
     ordershort: String,
     orderdescription: String,
     orderpriority: {type: String, default:'low'},
-    commentid: mongoose.Schema.Types.ObjectId,
+    commentid: Array,
     username: String,
     customername: String,
     timecreated: {type: Date, default: Date.now},

@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
     createdorders: {type: Array},
     fulfilledorders: {type: Array},
     commentedorders: {type: Array},
+    commentid:Array,
     inboxid: {type: mongoose.Schema.Types.ObjectId},
     timesignedup: {type: Date, default: Date.now},
 });

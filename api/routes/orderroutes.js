@@ -39,7 +39,7 @@ router.post('/createorder', (req, res, next) => {
 // add commentId
 
 router.patch('/addcommentid', (req, res, next) => {
-    Order.findOneAndUpdate({orderid: req.body.orderid}, {commentid: req.body.commentid})
+    Order.findOneAndUpdate({orderid: req.body.orderid}, {$push :{commentid: req.body.commentid}})
     .then(result => {
         res.status(200).json(result)
         console.log('comment id was succesfully added')

@@ -9,8 +9,6 @@ class SideBar extends Component {
         
     }
 
-
-
     static contextTypes = {
         router: PropTypes.object
     }
@@ -20,9 +18,21 @@ class SideBar extends Component {
         window.location.reload()
     }
 
-
-    onClick(){
+// Redirect Handles Linking to different Pages via Sidebar
+    redirectDashboard(){
         this.context.router.history.push(`/dashboard`)
+    }
+
+    redirectUser(){
+        this.context.router.history.push(`/user`)
+    }
+
+    redirectOrder(){
+        this.context.router.history.push(`/orders`)
+    }
+
+    redirectCustomer(){
+        this.context.router.history.push('/customer')
     }
 
     render() {
@@ -41,26 +51,22 @@ class SideBar extends Component {
                     <ul className="list-unstyled components">
                         
                         <li>
-                            <a><i className="material-icons" onClick={this.onClick.bind(this)}>dashboard</i></a>
+                            <a><i className="material-icons" onClick={this.redirectDashboard.bind(this)}>dashboard</i></a>
                         </li>
+
+                        <li>
+                            <a><i className="material-icons" onClick={this.redirectUser.bind(this)}>person</i></a>
+                        </li>
+
+                        <li>
+                            <a><i className="material-icons" onClick={this.redirectOrder.bind(this)}>assignment</i></a>
+                        </li>
+
+                        <li>
+                            <a><i className="material-icons" onClick={this.redirectOrder.bind(this)}>people</i></a>
+                        </li>
+
                        
-
-
-                        <li>
-                            <NavLink to='dashboard'><i className="material-icons">dashboard</i></NavLink>
-                        </li>
-                        
-                        <li>
-                            <NavLink to='user'><i className="material-icons">person</i></NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink to='orders'><i className="material-icons">assignment</i></NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink to='Customer'><i className="material-icons">people</i></NavLink>
-                        </li>
                    
                         <li onClick={this.logOut.bind(this)}>
                             <a><i className="material-icons">power_settings_new</i></a>

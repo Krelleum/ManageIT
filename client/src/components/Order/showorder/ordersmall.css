@@ -1,5 +1,6 @@
 .ordersmallwrapper{
-    background: var(--greybackground);
+    /* background: var(--greybackground); */
+    
     color: white;
     margin-top: 10px;
     min-height: 30px;
@@ -36,7 +37,7 @@
 
 .ordersmallbody h5{
     margin-top: 2px;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
 .ordersmallbody p{

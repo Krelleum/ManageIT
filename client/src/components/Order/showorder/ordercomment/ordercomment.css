@@ -1,0 +1,10 @@
+.ordercommentcontainer{
+    
+    border-top: 20px solid transparent;
+    border-image: var(--backgroundhover);
+    border-image-slice: 1;
+    background: var(--darkgreybackground);
+    padding-bottom: 100px; 
+    
+
+}

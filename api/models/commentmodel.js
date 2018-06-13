@@ -5,8 +5,8 @@ const commentSchema = mongoose.Schema({
     orderid: mongoose.Schema.Types.ObjectId,
     customerid: mongoose.Schema.Types.ObjectId,
     userid: mongoose.Schema.Types.ObjectId,
-    alluserid: Array,
     commenttext: String,
+    customername: String,
     timecreated: {type: Date, default: Date.now}
 });
 
