@@ -19,6 +19,8 @@ router.post('/createorder', (req, res, next) => {
         ordershort: req.body.ordershort,
         orderdescription: req.body.orderdescription,
         orderpriority: req.body.orderpriority,
+        username: req.body.username,
+        customername: req.body.customername,
         
     })
     
@@ -48,6 +50,20 @@ router.patch('/addcommentid', (req, res, next) => {
     })
 });
 
+
+// get Orders by ID
+
+
+router.get('/getorderbyid/:orderid', (req, res, next) => {
+    Order.findOne({ orderid: req.params.orderid })
+        .then(result => {
+            res.status(200).json(result)
+            console.log(result)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
 
 // get all open Orders
 

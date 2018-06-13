@@ -11,6 +11,8 @@ const orderSchema = mongoose.Schema({
     orderdescription: String,
     orderpriority: {type: String, default:'low'},
     commentid: mongoose.Schema.Types.ObjectId,
+    username: String,
+    customername: String,
     timecreated: {type: Date, default: Date.now},
 })
 

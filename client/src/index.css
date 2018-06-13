@@ -2,8 +2,14 @@
 --cardbackground: linear-gradient(1deg, rgb(74, 195, 255) 0%,rgb(74, 195, 255) 100%);
 --background: linear-gradient(45deg, rgba(104,211,130,1) 0%,rgba(73,177,150,1) 100%);
 --backgroundhover: linear-gradient(45deg, rgb(120, 221, 145) 0%,rgb(92, 194, 167)100%);
+--greybackground:#464646;
+--darkgreybackground:#3d3d3d;
+--shadowinset: inset 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+--shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
 }
+
+
 
 
 
@@ -31,7 +37,7 @@ input{
   border:none;
   padding: 8px;
   padding-left: 5px;
-  margin-top: 3px;
+  margin-top: 5px;
   min-width: 250px;
   
 }
@@ -40,7 +46,9 @@ input{
 button {
   border: none;
   background: none;
-  border: 1px solid white;
+  
   padding-left: 6px;
   padding-right: 6px;
+  margin-top: 10px;
+  box-shadow: var(--shadow);
 }

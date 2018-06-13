@@ -31,7 +31,7 @@ class OrderForm extends Component {
             this.createNewCustomer()
         }
         else {
-            this.createNewOrder(this.state.foundcustomerid);
+            this.createNewOrder(this.state.foundcustomerid, this.state.foundcustomername);
         }
     }
 
@@ -97,7 +97,7 @@ class OrderForm extends Component {
 
 
     createNewCustomer() {
-        let body = {
+        var body = {
             name: this.state.name,
             street: this.state.street,
             room: this.state.room,
@@ -120,7 +120,7 @@ class OrderForm extends Component {
                     this.setState({
                         createdcustomerid: response.data.customerid
                     })
-                    this.createNewOrder(response.data.customerid);
+                    this.createNewOrder(response.data.customerid, body.name);
                 }
             })
             .catch(err => {
@@ -131,7 +131,7 @@ class OrderForm extends Component {
 
 
 
-    createNewOrder(customerid) {
+    createNewOrder(customerid, customername) {
         let body = {
             ordertype: this.state.ordertype,
             orderheading: this.state.orderheading,
@@ -139,7 +139,9 @@ class OrderForm extends Component {
             orderdescription: this.state.orderdescription,
             orderpriority: this.state.orderpriority,
             userid: localStorage.getItem('userid'),
+            username: localStorage.getItem('username'),
             customerid: customerid,
+            customername: customername,
 
         }
         axios({
