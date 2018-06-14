@@ -29,6 +29,7 @@ class WriteComment extends Component {
                 orderid: this.props.orderid,
                 customerid: this.props.customerid,
                 customername: this.props.customername,
+                username: localStorage.getItem('username'),
                 
             }
 
@@ -44,7 +45,7 @@ class WriteComment extends Component {
                 .then(response => {
                     if (response.status === 201) {
                         console.log(response)
-                        
+                        window.location.reload()
                     }
                 })
                 .catch(err => {
@@ -63,7 +64,7 @@ class WriteComment extends Component {
     render() {
         return (
             <div>
-                <input id='commenttext' onChange={this.handleInput.bind(this)}></input>
+                <textarea id='commenttext' onChange={this.handleInput.bind(this)}></textarea>
                 <button onClick={this.handleClick.bind(this)}>Save</button>
             </div>
         )

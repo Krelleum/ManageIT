@@ -17,7 +17,7 @@ router.post('/createcomment', (req, res, next) => {
         orderid: req.body.orderid,
         commenttext: req.body.commenttext,
         customername: req.body.customername,
-
+        username: req.body.username,
     })
 
     newComment.save()
