@@ -159,8 +159,11 @@ class OrderForm extends Component {
                 if (response.status === 201) {
                     const newBody = {
                         orderid: response.data.orderid,
-                        customerid: customerid
+                        customerid: customerid,
+                        userid: localStorage.getItem('userid'),
                     }
+
+                    
 
                     axios({
                         method: 'patch',
@@ -172,11 +175,33 @@ class OrderForm extends Component {
                         }
                     })
                         .then(response => {
-                            alert('order added')
+                            console.log(response)
                         })
                         .catch(err => {
                             console.log(err)
                         })
+
+                    // pushes newly generated order id into Users Order id array 
+
+                    
+                    axios({
+                        method: 'patch',
+                        url: 'http://localhost:5000/user/createdorders',
+                        data: newBody,
+                        header: {
+                            'Content-Type': 'application/json',
+                            'Authorization': localStorage.getItem('tkey'),
+                        }
+                    })
+                        .then(response => {
+                            console.log(response)
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+
+
+
                 }
             })
             .catch(err => {

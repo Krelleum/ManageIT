@@ -93,6 +93,19 @@ router.post('/verify', (req, res, next) => {
 
 });
 
+// Get All Users
+
+router.get('/getallusers', (req, res, next) => {
+    User.find()
+        .then(result => {
+            res.status(200).json(result)
+            console.log(result)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+})
+
 
 // Get User Information
 
@@ -114,7 +127,7 @@ router.get('/getuserdata/:userid', (req, res, next) => {
 // Add Created Order
 
 router.patch('/createdorders', (req, res, next) => {
-    User.findOneAndUpdate({userid: req.body.userid}, {$push: {createdorders: req.body.createdorder}})
+    User.findOneAndUpdate({userid: req.body.userid}, {$push: {createdorders: req.body.orderid}})
     .then(result => {
         res.status(200).json(result);
         console.log('created Orders were updated')
