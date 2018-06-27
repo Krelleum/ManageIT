@@ -6,7 +6,7 @@ import ShowUserInfo from './showuserinfo';
 
 import axios from 'axios'
 
-
+// AUF JEDEN FALL EINE DOC SCHREIBEN !!!!!
 class ShowUser extends Component {
     constructor(props){
         super(props);
@@ -35,7 +35,12 @@ componentDidMount(){
         })
 }
 
-
+setStateByChild(userid){
+    
+    this.setState({
+        usertoshow: userid
+    })
+}
 
 
 
@@ -60,12 +65,12 @@ renderUserInfo(){
         <div className='col-md-6 showuserwrapper'>
             <div className='col-md-3 showusername'>
                 <h2>Username</h2>
-                {data.map((obj, index) => <ShowUserSmall key={index} data={obj} />)}
+                {data.map((obj, index) => <ShowUserSmall key={index} data={obj} setParent={this.setStateByChild.bind(this)}/>)}
             </div>
 
             <div className='col-md-9 showuserinfo'>
                 <h2>Userinformation</h2>
-
+                {this.renderUserInfo()}
             </div>
         </div>    
 

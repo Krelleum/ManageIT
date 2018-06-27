@@ -1,3 +1,20 @@
 .showusercontainer{
     padding-left: 70px;
 }
+
+
+
+.showusersmall{
+    
+    opacity: 0.5;
+    transition: all 200ms;
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.showusersmall:hover{
+    background: var(--backgroundhover);
+    opacity: 1;
+    
+}

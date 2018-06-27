@@ -13,9 +13,10 @@ class ShowUserSmall extends Component {
 
 
     render() {
+        var userid = this.props.data.userid;
         return (
             <div className='col-md-12 showusersmall'>
-                <p>{this.props.data.username}</p>
+                <p onClick={(userid) => this.props.setParent(this.props.data.userid)}>{this.props.data.username}</p>
 
             </div>
 
