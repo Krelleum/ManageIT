@@ -50,20 +50,20 @@ class SideBar extends Component {
 
                     <ul className="list-unstyled components">
                         
-                        <li>
-                            <a><i className="material-icons" onClick={this.redirectDashboard.bind(this)}>dashboard</i></a>
+                        <li onClick={this.redirectDashboard.bind(this)}>
+                            <a><i className="material-icons" >dashboard</i></a>
                         </li>
 
-                        <li>
-                            <a><i className="material-icons" onClick={this.redirectUser.bind(this)}>person</i></a>
+                        <li onClick={this.redirectUser.bind(this)}>
+                            <a><i className="material-icons" >person</i></a>
                         </li>
 
-                        <li>
-                            <a><i className="material-icons" onClick={this.redirectOrder.bind(this)}>assignment</i></a>
+                        <li onClick={this.redirectOrder.bind(this)}>
+                            <a><i className="material-icons" >assignment</i></a>
                         </li>
 
-                        <li>
-                            <a><i className="material-icons" onClick={this.redirectCustomer.bind(this)}>people</i></a>
+                        <li onClick={this.redirectCustomer.bind(this)}>
+                            <a><i className="material-icons" >people</i></a>
                         </li>
 
                        

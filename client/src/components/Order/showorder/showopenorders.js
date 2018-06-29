@@ -25,7 +25,7 @@ class ShowOpenOrders extends Component{
         .then(response => {
             console.log(response);
             this.setState({
-                data: response.data
+                data: response.data.reverse()
             });
         })
         .catch(err => {
@@ -41,13 +41,13 @@ class ShowOpenOrders extends Component{
     render() {
 
         let data = this.state.data;
-        let reverse = data.reverse();
+        
         return (
             <div className='col-md-12 showopenorderwrapper'>
                 <div className='showopenorderheading'>
                     <h2>Open Orders</h2>
                 </div>
-            {reverse.map((obj, index) =>
+            {data.map((obj, index) =>
                 <OrderSmall key={index} data={obj} />
             )}
         
