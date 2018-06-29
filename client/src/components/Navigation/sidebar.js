@@ -63,7 +63,7 @@ class SideBar extends Component {
                         </li>
 
                         <li>
-                            <a><i className="material-icons" onClick={this.redirectOrder.bind(this)}>people</i></a>
+                            <a><i className="material-icons" onClick={this.redirectCustomer.bind(this)}>people</i></a>
                         </li>
 
                        

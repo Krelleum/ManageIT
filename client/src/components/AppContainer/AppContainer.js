@@ -11,6 +11,9 @@ import ShowUserContainer from '../User/showusercontainer';
 import SideBarContainer from '../Navigation/sidebarcontainer';
 import OrdersContainer from '../Order/orderscontainer';
 import OrderBig from '../Order/showorder/orderbig';
+import ShowCustomerContainer from '../Customer/showcustomercontainer';
+
+
 
 class AppContainer extends Component {
 
@@ -27,6 +30,7 @@ class AppContainer extends Component {
                         <Route path='/dashboard' component={DashBoardContainer}></Route>
                         <Route path='/user' component={ShowUserContainer}></Route>
                         <Route path='/orders' component={OrdersContainer}></Route>
+                        <Route path='/customer' component={ShowCustomerContainer}></Route>
                         </Switch>
                         <Switch>
                         <Route path='/orderbig/:orderid' component={OrderBig} />

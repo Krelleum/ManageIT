@@ -21,31 +21,7 @@ class DashBoardUser extends Component{
             </div>
             
             
-            <div className='dashboarduserdata'>
-                <p>Email: {this.props.data.useremail}</p>
-                <p>Phone: {this.props.data.userphone}</p>
-                <p>Orders Created: {this.props.data.createdorders}</p>
-            </div>
-            
-            <div className='dashboarduserlinks'>
-                    <li>
-                        <Link to='dashboard'><i className="material-icons">dashboard</i></Link>
-                    </li>
-
-                    <li>
-                        <Link to='User'><i className="material-icons">person</i></Link>
-                    </li>
-
-                    <li>
-                        <Link to='orders'><i className="material-icons">assignment</i></Link>
-                    </li>
-
-                    <li>
-                        <Link to='Customer'><i className="material-icons">people</i></Link>
-                    </li>
-            
-            
-            </div>
+        
             
             
             </div>

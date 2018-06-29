@@ -3,17 +3,26 @@ import axios from 'axios';
 
 import './orderbig.css';
 import OrderCommentContainer from './ordercomment/ordercommentcontainer';
+import OrderStatusBtn from './orderstatusbtn';
 
 class OrderBig extends Component{
    constructor(props){
        super(props);
+
+        this.setStateByChild = this.setStateByChild.bind(this);
+
        this.state = {
            data: [],
-           customerinfo: []
+           customerinfo: [],
            
        }
    }
 
+
+    setStateByChild() {
+        
+        window.location.reload()
+    }
 
 
    componentDidMount(){
@@ -45,6 +54,10 @@ class OrderBig extends Component{
            this.setState({customerinfo : response.data})
        })
    }
+
+    
+
+
 
 
    renderStatus(){
@@ -82,6 +95,8 @@ class OrderBig extends Component{
             return null
         }
     }
+
+  
    
     render(){
         return(
@@ -92,6 +107,11 @@ class OrderBig extends Component{
                 </div>
                 <div className='col-md-4 orderbigleft'>
                     <div className='orderbigheading'>
+                        
+                        <div className='orderstatusbtnwrapper'>
+                            <OrderStatusBtn data={this.state.data} setStateByChild={this.setStateByChild} />
+                        </div>
+                        
                         <h2>{this.state.data.orderheading}</h2>
                         
                         <div className='orderbigheadingbar'>
@@ -107,6 +127,8 @@ class OrderBig extends Component{
                         </div>
                     
                     </div>
+
+                    
                     <div className='col-md-6 orderbigcustomerinfowrapper'>
                         
                         <div className='orderbigcustomerinfo orderbigcustomerinfoname'>

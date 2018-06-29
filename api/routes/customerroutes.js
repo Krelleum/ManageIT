@@ -98,6 +98,22 @@ router.patch('/customercontacts', (req, res, next) => {
 
 
 
+// Get All Customer
+
+router.get('/getallcustomer', (req, res, next) => {
+    Customer.find()
+        .then(result => {
+            res.status(200).json(result)
+            console.log(result)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+})
+
+
+
+
 // Search Customer
 
 router.get('/searchcustomer/:customername', (req, res, next) => {
@@ -121,6 +137,21 @@ router.get('/searchcustomer/:customername', (req, res, next) => {
         res.status(404).json(err);
     })
 });
+
+
+// Find Customer by ID
+
+router.get('/findcustomerid/:customerid', (req, res, next) => {
+    Customer.findOne({ customerid: req.params.customerid})
+        .then(result => {
+            res.status(200).json(result)
+            console.log(result)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+})
+
 
 
 

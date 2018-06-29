@@ -14,7 +14,57 @@
 }
 
 .showusersmall:hover{
-    background: var(--backgroundhover);
+    background: var(--darkgreybackground);
     opacity: 1;
     
 }
+
+
+
+
+
+
+
+.showuserinfo{
+    background: var(--darkgreybackground);
+    padding: 0px;
+    
+}
+.showuserinfo label{
+     border-bottom: 2px solid transparent;
+    border-image: var(--backgroundhover);
+    border-image-slice: 1;
+}
+
+.showuserinfoheader{
+    background: var(--backgroundhover);
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+.showuserinfophone{
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.showuserinfoemail{
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.showuserinfotime{
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+
+.showuserinfocreated{
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.showuserinfofulfilled{
+    padding-left: 10px;
+    margin-top: 20px;
+}
+

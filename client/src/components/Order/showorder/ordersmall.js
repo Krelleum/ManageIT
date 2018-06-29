@@ -98,7 +98,7 @@ renderAppointment(){
                     <div className='appointmentwrapper'>
                         {this.renderAppointment()}
                     </div>
-                    <Link to={`orderbig/${this.props.data.orderid}`}><i className="material-icons">arrow_forward</i></Link>
+                    <Link to={`orderbig/${this.props.data.orderid}`}><i className="ordersmallarrow material-icons">arrow_forward</i></Link>
 
 
                 </div>    

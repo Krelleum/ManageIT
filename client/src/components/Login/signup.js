@@ -58,7 +58,6 @@ class SignUp extends Component {
                 if (response.status === 201) {
                     console.log('You succesfully Signed up - Please login')
                     
-
                 }
                 else if(response.status === 409){
                     alert('Signup failed - Username already taken')
