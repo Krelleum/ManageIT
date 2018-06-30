@@ -10,14 +10,26 @@
 
 .dashboarduserwrapper{
     background: grey;
-    
+    padding-top: 20px;
+    min-height: 200px;
     
 }
 
 .dashboarduserwrapper:hover{
     background: var(--backgroundhover);
-    color: white;
-    
-    
-    
+    color: white;    
+}
+
+.dashboarduserheading p{
+    float:right;
+    font-size: 2.5rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.dashboarduserheading h2{
+    float:left;
+    font-size: 2.5rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }

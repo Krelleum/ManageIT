@@ -59,13 +59,13 @@ class ShowCustomer extends Component {
         let data = this.state.data;
 
         return (
-            <div className='col-md-6 showcustomerwrapper'>
-                <div className='col-md-3 showcustomername'>
+            <div className='col-md-12 showcustomerwrapper'>
+                <div className='col-md-2 showcustomername'>
                     <h2>Name</h2>
                     {data.map((obj, index) => <ShowCustomerSmall key={index} data={obj} setParent={this.setStateByChild.bind(this)} />)}
                 </div>
 
-                <div className='col-md-9 showcustomerinformation'>
+                <div className='col-md-10 showcustomerinformation'>
                     <h2>Customerinformation</h2>
                     {this.renderCustomerInfo()}
                 </div>

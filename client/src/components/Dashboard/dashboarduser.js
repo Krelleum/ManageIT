@@ -17,7 +17,7 @@ class DashBoardUser extends Component{
             
             <div className='dashboarduserheading'>
                 <h2>Welcome {this.props.data.username}</h2>
-                    <p>{new Date().getHours()}:{new Date().getMinutes()}</p>
+                <p>{new Date().getHours()}:{new Date().getMinutes()}</p>
             </div>
             
             

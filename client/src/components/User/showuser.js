@@ -68,7 +68,7 @@ renderUserInfo(){
                 {data.map((obj, index) => <ShowUserSmall key={index} data={obj} setParent={this.setStateByChild.bind(this)}/>)}
             </div>
 
-            <div className='col-md-9 showuserinformation'>
+            <div className='col-md-5 showuserinformation'>
                 <h2>Userinformation</h2>
                 {this.renderUserInfo()}
             </div>

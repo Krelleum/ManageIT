@@ -12,27 +12,27 @@ class ShowUserInfo extends Component {
     }
 
 
-    componentDidMount() {
-        axios({
-            method: 'get',
-            url: 'http://localhost:5000/customer/findcustomerid/' + this.props.customerid,
-            header: {
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('tkey'),
-            }
-        })
-            .then(response => {
-                this.setState({
-                    data: response.data
-                })
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+    // componentWillMount() {
+    //     axios({
+    //         method: 'get',
+    //         url: 'http://localhost:5000/customer/findcustomerid/' + this.props.customerid,
+    //         header: {
+    //             'Content-Type': 'application/json',
+    //             'Authorization': localStorage.getItem('tkey'),
+    //         }
+    //     })
+    //         .then(response => {
+    //             this.setState({
+    //                 data: response.data
+    //             })
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
 
 
-    componentWillReceiveProps() {
+    componentDidUpdate() {
         axios({
             method: 'get',
             url: 'http://localhost:5000/customer/findcustomerid/' + this.props.customerid,
@@ -61,6 +61,22 @@ class ShowUserInfo extends Component {
             <div className='col-md-12 showcustomerinfo'>
                 <div className='showcustomerinfoheader'>
                     <p>{this.state.data.name}</p>
+                </div>
+                <div className='showcustomerinfophone'>
+                    <label>Phone</label>
+                    <p>{this.state.data.phone}</p>
+                </div>
+                <div className='showcustomerinfostreet'>
+                    <label>Street</label>
+                    <p>{this.state.data.street}</p>
+                </div>
+                <div className='showcustomerinforoom'>
+                    <label>Room</label>
+                    <p>{this.state.data.room}</p>
+                </div>
+                <div className='showcustomerinfoemail'>
+                    <label>Email</label>
+                    <p>{this.state.data.customeremail}</p>
                 </div>
                
 
