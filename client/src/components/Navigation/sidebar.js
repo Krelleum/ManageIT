@@ -35,6 +35,11 @@ class SideBar extends Component {
         this.context.router.history.push('/customer')
     }
 
+    redirectInbox() {
+        this.context.router.history.push('/inbox')
+    }
+
+
     render() {
 
 
@@ -67,6 +72,10 @@ class SideBar extends Component {
 
                         <li onClick={this.redirectCustomer.bind(this)}>
                             <a><i className="material-icons" >people</i></a>
+                        </li>
+
+                        <li onClick={this.redirectInbox.bind(this)}>
+                            <a><i className="material-icons" >inbox</i></a>
                         </li>
 
                        

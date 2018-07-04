@@ -12,7 +12,7 @@ import SideBarContainer from '../Navigation/sidebarcontainer';
 import OrdersContainer from '../Order/orderscontainer';
 import OrderBig from '../Order/showorder/orderbig';
 import ShowCustomerContainer from '../Customer/showcustomercontainer';
-
+import InboxContainer from '../Inbox/inboxcontainer';
 
 
 class AppContainer extends Component {
@@ -32,6 +32,7 @@ class AppContainer extends Component {
                         <Route path='/user' component={ShowUserContainer}></Route>
                         <Route path='/orders' component={OrdersContainer}></Route>
                         <Route path='/customer' component={ShowCustomerContainer}></Route>
+                        <Route path='/inbox' component={InboxContainer}></Route>
                         </Switch>
                         <Switch>
                         <Route path='/orderbig/:orderid' component={OrderBig} />

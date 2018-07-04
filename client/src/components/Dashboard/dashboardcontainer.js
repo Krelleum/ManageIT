@@ -4,7 +4,7 @@ import './dashboard.css';
 import DashBoardUser from './dashboarduser';
 import OpenOrderCard from './openordercard';
 import HighPriorityCard from './highprioritycard';
-
+import MessageCard from './messagecard';
 
 import axios from 'axios';
 
@@ -57,7 +57,8 @@ componentDidMount(){
                  
             </div>
             <div className='row row2'>
-                    <HighPriorityCard /> 
+                    <HighPriorityCard />
+                    <MessageCard/> 
             </div>
             
             </div>

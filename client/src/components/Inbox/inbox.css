@@ -1,0 +1,14 @@
+.inboxcontainer{
+    padding-left: 70px;
+}
+
+.searchcontact input {
+    background: none;
+    border: 2px solid transparent;
+    border-image: var(--backgroundhover);
+    border-image-slice: 1;
+}
+
+.searchcontact input:focus {
+    outline: none;
+}

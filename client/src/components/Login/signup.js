@@ -57,7 +57,8 @@ class SignUp extends Component {
             .then(response => {
                 if (response.status === 201) {
                     console.log('You succesfully Signed up - Please login')
-                    
+                    this.createNewInbox(response.data.userid, response.data.username)
+
                 }
                 else if(response.status === 409){
                     alert('Signup failed - Username already taken')
@@ -76,6 +77,59 @@ class SignUp extends Component {
     }
 
 
+
+    createNewInbox(userId, username){
+       
+       const inboxBody = {
+            userid: userId,
+            ownername: username,
+       }
+       
+        axios({
+            method: 'post',
+            url: 'http://localhost:5000/inbox/createinbox',
+            data: inboxBody,
+            header: { 'Content-Type': 'application/json' }
+        })
+        .then(response => {
+            if(response.status === 201){
+                console.log('New Inbox created Successfully')
+                this.patchUserAccount(response.data.inboxid, inboxBody.userid)
+            }
+            
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+
+    patchUserAccount(inboxid, userid){
+        
+        const patchInboxId = {
+            userid :userid,
+            inboxid: inboxid
+        }
+        
+        
+        axios({
+            method: 'patch',
+            url: 'http://localhost:5000/user/patchuserinboxid',
+            data: patchInboxId,
+            header: { 'Content-Type': 'application/json' }
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    console.log('Inbox Id was patched')
+                }
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+
+    }
 
 
 

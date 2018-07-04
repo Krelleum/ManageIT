@@ -9,7 +9,7 @@ const router = express.Router();
 const Inbox = require('../models/inboxmodel');
 
 // Creates new Inbox
-router.post('/create', (req, res, next) => {
+router.post('/createinbox', (req, res, next) => {
     
     const newInbox = new Inbox({
         inboxid: new mongoose.Types.ObjectId(),
@@ -29,6 +29,26 @@ router.post('/create', (req, res, next) => {
 
     
 });
+
+
+
+// gets all messages
+
+router.get('/getallmessages/:userid', (req, res, next) => {
+    Inbox.findOne({userid: req.params.userid})
+    .then(result => {
+        if (result){
+            res.status(200).json(result)
+        }
+        
+        else{
+            res.status(404).json('unable to find Inbox')
+        } 
+    })
+    .catch(err => {
+        res.status(500).json(err)
+    })
+})
 
 
 
