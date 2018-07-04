@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './showcustomer.css';
 import axios from 'axios';
 
+
 // AUF JEDEN FALL EINE DOC SCHREIBEN !!!!!
 class ShowUserInfo extends Component {
     constructor(props) {
@@ -11,28 +12,9 @@ class ShowUserInfo extends Component {
         }
     }
 
+    
 
-    // componentWillMount() {
-    //     axios({
-    //         method: 'get',
-    //         url: 'http://localhost:5000/customer/findcustomerid/' + this.props.customerid,
-    //         header: {
-    //             'Content-Type': 'application/json',
-    //             'Authorization': localStorage.getItem('tkey'),
-    //         }
-    //     })
-    //         .then(response => {
-    //             this.setState({
-    //                 data: response.data
-    //             })
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    // }
-
-
-    componentDidUpdate() {
+    componentDidMount() {
         axios({
             method: 'get',
             url: 'http://localhost:5000/customer/findcustomerid/' + this.props.customerid,
@@ -52,6 +34,30 @@ class ShowUserInfo extends Component {
     }
 
 
+    componentDidUpdate() {
+        axios({
+            method: 'get',
+            url: 'http://localhost:5000/customer/findcustomerid/' + this.props.customerid,
+            header: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('tkey'),
+            }
+        })
+            .then(response => {
+                this.setState({
+                    data: response.data
+                })
+                
+            })
+            .catch(err => {
+                console.log(err)
+            })
+      
+    }
+
+   
+
+
 
 
 
@@ -59,6 +65,7 @@ class ShowUserInfo extends Component {
     render() {
         return (
             <div className='col-md-12 showcustomerinfo'>
+              <div className='col-md-6 showcustomerinfoleft'>
                 <div className='showcustomerinfoheader'>
                     <p>{this.state.data.name}</p>
                 </div>
@@ -78,7 +85,11 @@ class ShowUserInfo extends Component {
                     <label>Email</label>
                     <p>{this.state.data.customeremail}</p>
                 </div>
+               </div>
+               <div className='col-md-6 showcustomerinforight'>
                
+                   
+               </div>
 
             </div>
 

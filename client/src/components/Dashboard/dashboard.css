@@ -33,3 +33,40 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+.openordercard{
+    background: var(--darkgreybackground);
+    min-height: 200px;
+    text-align: center;
+    color: grey;
+    padding-top: 20px;
+}
+
+.openordercard:hover{
+    background: var(--backgroundhover);
+}
+
+.openordercard h2{
+    font-size: 6rem;
+    text-align: center;
+    color: white;
+}
+
+
+.highprioritycard{
+    background: var(--darkgreybackground);
+    
+    min-height: 200px;
+    text-align: center;
+    color: grey;
+    padding-top: 20px;
+}
+
+.highprioritycard:hover{
+    background: var(--backgroundhover);
+}
+
+.highprioritycard h2{
+    color: white;
+    font-size: 6rem;
+}

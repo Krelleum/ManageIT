@@ -87,7 +87,7 @@ renderAppointment(){
                         
                         <h5>{this.props.data.customername}</h5>
                         <p>{this.props.data.orderheading}</p>
-                        <p>{this.props.data.ordershort}</p>
+                        
                     </div>
                 </div>
                 

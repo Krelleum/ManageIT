@@ -54,13 +54,16 @@ class SideBar extends Component {
                             <a><i className="material-icons" >dashboard</i></a>
                         </li>
 
+                        <li onClick={this.redirectOrder.bind(this)}>
+                            <a><i className="material-icons" >assignment</i></a>
+                        </li>
+
+
                         <li onClick={this.redirectUser.bind(this)}>
                             <a><i className="material-icons" >person</i></a>
                         </li>
 
-                        <li onClick={this.redirectOrder.bind(this)}>
-                            <a><i className="material-icons" >assignment</i></a>
-                        </li>
+                        
 
                         <li onClick={this.redirectCustomer.bind(this)}>
                             <a><i className="material-icons" >people</i></a>

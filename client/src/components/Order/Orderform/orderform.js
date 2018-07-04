@@ -29,9 +29,11 @@ class OrderForm extends Component {
     handleClick() {
         if (this.state.foundcustomer === 'init' || this.state.foundcustomer === 'notfound') {
             this.createNewCustomer()
+            window.location.reload()
         }
         else {
             this.createNewOrder(this.state.foundcustomerid, this.state.foundcustomername);
+            window.location.reload()
         }
     }
 

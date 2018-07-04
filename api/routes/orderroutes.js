@@ -97,6 +97,21 @@ router.get('/getclosedorders', (req, res, next) => {
 
 
 
+// get orders by Customer ID
+
+router.get('/getcustomerorders', (req, res, next) => {
+    Order.find({ customerid: req.body.customerid })
+        .then(result => {
+            res.status(200).json(result)
+            console.log(result)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+
+
 // Change Order Status 
 
 router.patch('/changeorderstatus', (req, res, next) => {

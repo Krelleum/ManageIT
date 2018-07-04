@@ -27,6 +27,7 @@ class AppContainer extends Component {
                         
                         <SideBarContainer />
                         <Switch>
+                        <Route exact path="/" component={DashBoardContainer} />
                         <Route path='/dashboard' component={DashBoardContainer}></Route>
                         <Route path='/user' component={ShowUserContainer}></Route>
                         <Route path='/orders' component={OrdersContainer}></Route>

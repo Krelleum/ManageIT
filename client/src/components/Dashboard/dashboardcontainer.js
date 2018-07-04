@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import './dashboard.css';
 import DashBoardUser from './dashboarduser';
-
+import OpenOrderCard from './openordercard';
+import HighPriorityCard from './highprioritycard';
 
 
 import axios from 'axios';
@@ -52,7 +53,11 @@ componentDidMount(){
             
             <div className='row'>
                 <DashBoardUser data={this.state.data}/>
-                    
+                <OpenOrderCard/>
+                 
+            </div>
+            <div className='row row2'>
+                    <HighPriorityCard /> 
             </div>
             
             </div>

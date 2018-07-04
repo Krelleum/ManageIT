@@ -12,7 +12,7 @@ class ShowUserInfo extends Component {
     }
 
 
-componentDidMount(){
+componentDidUpdate(){
     axios({
         method: 'get',
         url: 'http://localhost:5000/user/getuserdata/' + this.props.userid,
