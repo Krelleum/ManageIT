@@ -30,7 +30,7 @@ class SearchContact extends Component {
         return (
             <div className='col-md-12 searchcontact'>
                 <h2>Search Contact</h2>
-                <input onChange={this.props.updateParentsState}></input>
+                <input onChange={this.props.updateParentsState} placeholder='Search Contact'></input>
 
             </div>
 

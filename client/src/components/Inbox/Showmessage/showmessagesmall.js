@@ -26,6 +26,10 @@ componentDidMount(){
 
         return (
             <div className='col-md-12 showmessagesmall'>
+                <div className='showmessagesmallsender'>
+                    <p>{this.props.data.sendername}</p>
+                </div>
+               
             <p>{this.props.data.messagetext}</p>
 
             </div>

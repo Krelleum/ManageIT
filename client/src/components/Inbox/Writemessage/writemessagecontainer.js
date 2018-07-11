@@ -4,6 +4,8 @@ import '../inbox.css';
 import axios from 'axios';
 
 import SearchContact from './searchcontact';
+import WriteMessage from './writemessage';
+
 
 class WriteMessageContainer extends Component {
     constructor(props) {
@@ -51,7 +53,9 @@ getInboxId(username){
 
 renderFoundUser(){
     if (this.state.data !== 'init' && this.state.data){
-        return <div className='founduser'><p>{this.state.data.username}</p></div>
+        return <div><div className='founduser'><p>{this.state.data.username}</p></div><WriteMessage receiverid={this.state.data.inboxid}/></div>
+            
+            
     }
     else{
         return <div className='founduser'><p>no user found</p></div>
@@ -71,7 +75,9 @@ renderFoundUser(){
             <div className='col-md-6 writemessagecontainer'>
               <h2>Write Message</h2>
               <SearchContact updateParentsState={this.updateStateByChild.bind(this)}/>
-              {this.renderFoundUser()}
+                <div className='col-md-12 founduserwrapper'>
+                    {this.renderFoundUser()}
+                </div>
             </div>
 
         )

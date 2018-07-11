@@ -60,6 +60,7 @@ router.patch('/sendmessage', (req, res, next) => {
     
     const newMessage = {
         senderid: req.body.senderid,
+        sendername: req.body.sendername,
         messagetext: req.body.messagetext,
         messageid: new mongoose.Types.ObjectId(),
     }
