@@ -70,7 +70,7 @@ renderAppointment(){
 
     render(){
         return (
-            <div className='col-md-12 ordersmallwrapper' >
+            <Link to={`orderbig/${this.props.data.orderid}`}><div className='col-md-12 ordersmallwrapper' >
                 
                 <div className='ordersmallheading'>
                     <div className='ordersmallusername'>
@@ -98,11 +98,12 @@ renderAppointment(){
                     <div className='appointmentwrapper'>
                         {this.renderAppointment()}
                     </div>
-                    <Link to={`orderbig/${this.props.data.orderid}`}><i className="ordersmallarrow material-icons">arrow_forward</i></Link>
+                    
 
 
                 </div>    
             </div>
+            </Link>
         )
     }
 }

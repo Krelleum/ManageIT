@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './dashboard.css';
+import PropTypes from 'prop-types'
 
 class OpenOrderCard extends Component{
     constructor(props){
@@ -11,6 +12,13 @@ class OpenOrderCard extends Component{
         }
     }
     
+// For ROUTING VIA CLICK ON CARD
+    static contextTypes = {
+        router: PropTypes.object
+    }
+
+
+
     componentWillMount(){
         axios({
             method: 'get',
@@ -32,9 +40,14 @@ class OpenOrderCard extends Component{
     }
     
     
+    redirectOrder() {
+        this.context.router.history.push(`/orders`)
+    }
+
+
     render(){
         return(
-            <div className='col-md-2 openordercard'>
+            <div className='col-md-2 openordercard' onClick={this.redirectOrder.bind(this)}>
                 <i className="material-icons" id='openordercardicon' >assignment</i>
                 <p>You have got</p>
                 <h2>{this.state.data.length}</h2>

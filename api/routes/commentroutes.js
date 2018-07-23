@@ -45,6 +45,20 @@ router.get('/getcommentbyorderid/:orderid', (req, res, next) => {
     })
 })
 
+// Delete all Comments with a certain orderid
+
+router.delete('/deleteallcomments/:orderid', (req, res, next) =>{
+    Comment.find({orderid: req.params.orderid})
+    .then(result => {
+        res.status(200).json(result);
+        console.log('comments were deleted')
+    })
+    .catch(err => {
+        res.status(500).json(err);
+        console.log('comments could not be deleted');
+    })
+})
+
 
 
 

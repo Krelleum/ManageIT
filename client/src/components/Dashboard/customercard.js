@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './dashboard.css';
+import PropTypes from 'prop-types'
 
 class CustomerCard extends Component {
     constructor(props) {
@@ -9,6 +10,11 @@ class CustomerCard extends Component {
         this.state = {
             data: 'init'
         }
+    }
+
+
+    static contextTypes = {
+        router: PropTypes.object
     }
 
     componentWillMount() {
@@ -32,9 +38,16 @@ class CustomerCard extends Component {
     }
 
 
+
+
+
+    redirectCustomer() {
+        this.context.router.history.push('/customer')
+    }
+
     render() {
         return (
-            <div className='col-md-3 customercard'>
+            <div className='col-md-3 customercard' onClick={this.redirectCustomer.bind(this)}>
                 <i className="material-icons" id='openordercardicon' >people</i>
                 <p>There are</p>
                 <h2>{this.state.data.length}</h2>

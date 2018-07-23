@@ -129,8 +129,8 @@ router.patch('/changeorderstatus', (req, res, next) => {
 
 // delete Order
 
-router.delete('/deleteorder', (req, res, next) => {
-    Order.findOneAndRemove({orderid: req.body.orderid})
+router.delete('/deleteorder/:orderid', (req, res, next) => {
+    Order.findOneAndRemove({orderid: req.params.orderid})
     .then(result => {
         if(result){
             console.log('order deleted Succesfully')

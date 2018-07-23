@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './dashboard.css';
+import PropTypes from 'prop-types'
 
 class MessageCard extends Component {
     constructor(props) {
@@ -10,6 +11,13 @@ class MessageCard extends Component {
             data: []
         }
     }
+
+    static contextTypes = {
+        router: PropTypes.object
+    }
+
+
+
 
     componentDidMount() {
         const userid = localStorage.getItem('userid');
@@ -36,13 +44,20 @@ class MessageCard extends Component {
     }
 
 
+
+    redirectInbox() {
+        this.context.router.history.push('/inbox')
+    }
+
+
+
     render() {
        
        
        
         return (
-            <div className='col-md-4 messagecard'>
-                <i className="material-icons" id='messagecardicon' >mail</i>
+            <div className='col-md-4 messagecard' onClick={this.redirectInbox.bind(this)}>
+                <i className="material-icons" id='messagecardicon'>mail</i>
                 <p>You've got</p>
                 <h2>{this.state.data.messages && this.state.data.messages.length}</h2>
                 <p>Messages</p>

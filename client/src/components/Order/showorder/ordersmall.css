@@ -2,13 +2,15 @@
     /* background: var(--greybackground); */
     
     color: white;
-    
+    margin-top: 10px;
     min-height: 30px;
     padding: 0px;
+    padding-bottom: 15px;
+    padding-top: 5px;
     border-top: 2px solid transparent;
     border-image: var(--backgroundhover);
     border-image-slice: 1;
-    transition: all 200ms linear;
+    
 }
 
 .ordersmallwrapper:hover{
@@ -50,6 +52,8 @@
     margin-bottom: 2px;
     
 }
+
+
 
 .ordersmallleft{
     padding: 0px;

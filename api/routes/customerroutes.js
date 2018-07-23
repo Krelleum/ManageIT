@@ -72,7 +72,7 @@ router.patch('/deleteorder', (req, res, next) => {
     Customer.findOneAndUpdate({ customerid: req.body.customerid }, { $pull: { orders: req.body.orderid } })
         .then(result => {
             res.status(200).json(result);
-            console.log('order was deleted  from Customer')
+            console.log('Order was deleted  from Customer')
         })
         .catch(err => {
             res.status(500).json(err);
