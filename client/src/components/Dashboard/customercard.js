@@ -3,18 +3,18 @@ import axios from 'axios';
 
 import './dashboard.css';
 
-class HighPriorityCard extends Component {
+class CustomerCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: 'init'
         }
     }
 
     componentWillMount() {
         axios({
             method: 'get',
-            url: 'http://localhost:5000/order/getopenorders',
+            url: 'http://localhost:5000/customer/getallcustomer',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('tkey')
@@ -32,29 +32,16 @@ class HighPriorityCard extends Component {
     }
 
 
-    filterPriority(){
-        
-        if (data != [])
-        var data = this.state.data
-        
-        var filtered = data.filter(obj => 
-            obj.orderpriority == 'high'
-        )
-        console.log(filtered)
-        return filtered.length
-    }
-
-
     render() {
         return (
-            <div className='col-md-2 highprioritycard'>
-                <i className="material-icons" id='highprioritycardicon' >warning</i>
-                <p>You have got</p>
-                <h2>{this.filterPriority()}</h2>
-                <p>High Priority Orders</p>
+            <div className='col-md-3 customercard'>
+                <i className="material-icons" id='openordercardicon' >people</i>
+                <p>There are</p>
+                <h2>{this.state.data.length}</h2>
+                <p>active Customers</p>
             </div>
         )
     }
 }
 
-export default HighPriorityCard;
+export default CustomerCard;

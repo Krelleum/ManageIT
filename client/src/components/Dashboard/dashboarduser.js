@@ -16,6 +16,7 @@ class DashBoardUser extends Component{
             <div className='col-md-4 dashboarduserwrapper'>
             
             <div className='dashboarduserheading'>
+                    <i className="material-icons" id='dashboardusericon' >home</i>
                 <h2>Welcome {this.props.data.username}</h2>
                 <p>{new Date().getHours()}:{new Date().getMinutes()}</p>
             </div>

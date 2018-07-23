@@ -50,7 +50,7 @@ renderUserInfo(){
     }
     else
     {
-        return null
+        return <div className='nouseravaiable'><p>Please choose a User</p></div>
     }
 }
 

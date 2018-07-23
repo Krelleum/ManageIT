@@ -1,5 +1,13 @@
 .dashboardcontainer{
     padding-left: 70px;
+    
+}
+
+#dashboardusericon{
+    position: absolute;
+    font-size: 250px;
+    color: rgba(255,255,255,0.1);
+    left: 30%;
 }
 
 @media (max-width: 768px) {
@@ -12,12 +20,15 @@
     background: grey;
     padding-top: 20px;
     min-height: 200px;
-    
+    transition: all 200ms linear; 
+    overflow: hidden;
 }
 
 .dashboarduserwrapper:hover{
     background: var(--backgroundhover);
-    color: white;    
+    color: white;
+    transform: scale(1.05);
+    z-index: 102;    
 }
 
 .dashboarduserheading p{
@@ -40,10 +51,15 @@
     text-align: center;
     color: grey;
     padding-top: 20px;
+    transition: all 200ms linear;
+    overflow: hidden;
 }
 
 .openordercard:hover{
     background: var(--backgroundhover);
+    transform: scale(1.05);
+    z-index: 99;
+    
 }
 
 .openordercard h2{
@@ -52,23 +68,40 @@
     color: white;
 }
 
+#openordercardicon {
+    font-size:250px;
+    position: absolute;
+    color: rgba(255,255,255,0.1);
+}
+
 
 .highprioritycard{
     background: var(--darkgreybackground);
-    
+    overflow: hidden;
     min-height: 200px;
     text-align: center;
     color: grey;
     padding-top: 20px;
+    transition: all 200ms linear;
 }
 
 .highprioritycard:hover{
     background: var(--backgroundhover);
+    transform: scale(1.05);
+    z-index: 99;
 }
 
 .highprioritycard h2{
     color: white;
     font-size: 6rem;
+}
+
+#highprioritycardicon{
+    font-size:250px;
+    position: absolute;
+    
+    
+    color: rgba(255,255,255,0.1);
 }
 
 .messagecard{
@@ -77,7 +110,16 @@
     max-height: 200px;
     overflow: hidden;
     padding: 0px;
+    padding-top: 50px;
+    text-align: center;
+    transition: all 200ms linear;
+    overflow: hidden;
    
+}
+
+.messagecard:hover{
+    background: var(--backgroundhover);
+    transform: scale(1.05);
 }
 
 .messagecard img {
@@ -93,4 +135,50 @@
    
     
 
+}
+
+.messagecard p{
+    color: grey;
+    display: inline;
+    margin-right: 10px;
+    margin-left: 10px; 
+}
+
+.messagecard h2{
+     color: white;
+    font-size: 6rem;
+    display: inline;
+}
+
+#messagecardicon{
+    position: absolute;
+    font-size: 250px;
+    color: rgba(255,255,255,0.1);
+    
+}
+
+
+
+.customercard{
+    background: var(--darkgreybackground);
+    min-height: 200px;
+    text-align: center;
+    color: grey;
+    padding-top: 20px;
+    transition: all 200ms linear;
+    overflow: hidden;
+}
+
+
+.customercard:hover{
+    background: var(--backgroundhover);
+    transform: scale(1.05);
+    z-index: 99;
+    
+}
+
+.customercard h2{
+    font-size: 6rem;
+    text-align: center;
+    color: white;
 }

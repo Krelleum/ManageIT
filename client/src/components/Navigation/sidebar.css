@@ -56,7 +56,7 @@ a:focus {
 
 #sidebar {
   position: fixed;
-  z-index: 500;
+  z-index: 98;
   min-width: 50px;
   max-width: 50px;
   background: grey;
@@ -84,7 +84,7 @@ a:focus {
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  
 }
 
 #sidebar ul p {
@@ -96,11 +96,15 @@ a:focus {
   padding: 10px;
   font-size: 1.1em;
   display: block;
+  transition: all 100ms linear;
 }
+
 
 #sidebar ul li a:hover {
   color: grey;
   background:var(--background);
+  transform: scale(1.05);
+  box-shadow: var(--shadow);
 }
 
 #sidebar ul li.active > a,

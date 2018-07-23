@@ -5,6 +5,8 @@ import DashBoardUser from './dashboarduser';
 import OpenOrderCard from './openordercard';
 import HighPriorityCard from './highprioritycard';
 import MessageCard from './messagecard';
+import CustomerCard from './customercard';
+
 
 import axios from 'axios';
 
@@ -54,12 +56,15 @@ componentDidMount(){
             <div className='row'>
                 <DashBoardUser data={this.state.data}/>
                 <OpenOrderCard/>
+                <CustomerCard/>
                  
             </div>
             <div className='row row2'>
                     <HighPriorityCard />
                     <MessageCard/> 
             </div>
+
+          
             
             </div>
         )

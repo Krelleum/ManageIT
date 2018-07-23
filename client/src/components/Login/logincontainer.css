@@ -21,7 +21,7 @@
 
 .logincontainersignupbtn{
     margin-top: 0px;
-    background: grey;
+    background: var(--darkgreybackground);
     color: white;
 }
 
@@ -48,15 +48,24 @@
 }
 
 .loginwrapper{
-    background: white;
+    background: var(--darkgreybackground);
     padding-bottom: 50px;
 }
 
 
 .signupform input{
-    color: black;
+    color: white;
+    background: none;
 }
 
 .loginform input{
-    color: black;
+    color: white;
+    background: none;
+    border-bottom: 1px solid transparent;
+    border-image: var(--backgroundhover);
+    border-image-slice: 1;
+}
+
+#loginbutton{
+    border: none;
 }

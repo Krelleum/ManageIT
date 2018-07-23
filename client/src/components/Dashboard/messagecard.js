@@ -42,7 +42,8 @@ class MessageCard extends Component {
        
         return (
             <div className='col-md-4 messagecard'>
-                
+                <i className="material-icons" id='messagecardicon' >mail</i>
+                <p>You've got</p>
                 <h2>{this.state.data.messages && this.state.data.messages.length}</h2>
                 <p>Messages</p>
                 

@@ -35,6 +35,7 @@ class OpenOrderCard extends Component{
     render(){
         return(
             <div className='col-md-2 openordercard'>
+                <i className="material-icons" id='openordercardicon' >assignment</i>
                 <p>You have got</p>
                 <h2>{this.state.data.length}</h2>
                 <p>Open Orders</p>
