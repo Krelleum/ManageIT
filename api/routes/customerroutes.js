@@ -104,7 +104,7 @@ router.get('/getallcustomer', (req, res, next) => {
     Customer.find()
         .then(result => {
             res.status(200).json(result)
-            console.log(result)
+            console.log('Getting all Customers')
         })
         .catch(err => {
             res.status(500).json(err)
@@ -123,7 +123,7 @@ router.get('/searchcustomer/:customername', (req, res, next) => {
     Customer.findOne({name: customername})
     
     .then(result => {
-        console.log(result);
+        console.log('found Customer');
         if(result === null){
             
             res.status(404).json(result);
@@ -145,7 +145,7 @@ router.get('/findcustomerid/:customerid', (req, res, next) => {
     Customer.findOne({ customerid: req.params.customerid})
         .then(result => {
             res.status(200).json(result)
-            console.log(result)
+            console.log('Found Customer')
         })
         .catch(err => {
             res.status(500).json(err)

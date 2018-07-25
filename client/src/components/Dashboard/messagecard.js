@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
+import getShift from '../classifier/getshift';
+
 import './dashboard.css';
 import PropTypes from 'prop-types'
 
@@ -21,7 +24,7 @@ class MessageCard extends Component {
 
     componentDidMount() {
         const userid = localStorage.getItem('userid');
-
+        
         axios({
             method: 'get',
             url: 'http://localhost:5000/inbox/getallmessages/' + userid,
@@ -47,6 +50,7 @@ class MessageCard extends Component {
 
     redirectInbox() {
         this.context.router.history.push('/inbox')
+       
     }
 
 

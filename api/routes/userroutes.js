@@ -113,7 +113,7 @@ router.get('/getuserdata/:userid', (req, res, next) => {
     User.findOne({ userid: req.params.userid })
         .then(result => {
             res.status(200).json(result)
-            console.log(result)
+            console.log('user data found')
         })
         .catch(err => {
             res.status(500).json(err)

@@ -11,6 +11,7 @@ const orderRoute = require('./api/routes/orderroutes');
 const inboxRoute = require('./api/routes/inboxroutes');
 const customerRoute = require('./api/routes/customerroutes');
 const commentRoute = require('./api/routes/commentroutes');
+const timestampRoute = require('./api/routes/timestamproute');
 
 
 //  Mongo Connect
@@ -43,6 +44,7 @@ app.use('/order', orderRoute);
 app.use('/inbox', inboxRoute);
 app.use('/customer', customerRoute);
 app.use('/comment', commentRoute);
+app.use('/timestamp', timestampRoute)
 
 
 

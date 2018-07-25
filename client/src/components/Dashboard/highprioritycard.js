@@ -51,7 +51,7 @@ class HighPriorityCard extends Component {
         var filtered = data.filter(obj => 
             obj.orderpriority == 'high'
         )
-        console.log(filtered)
+       
         return filtered.length
     }
 

@@ -58,7 +58,7 @@ router.get('/getorderbyid/:orderid', (req, res, next) => {
     Order.findOne({ orderid: req.params.orderid })
         .then(result => {
             res.status(200).json(result)
-            console.log(result)
+            
         })
         .catch(err => {
             console.log(err)
@@ -71,7 +71,7 @@ router.get('/getopenorders', (req, res, next) => {
     Order.find({orderstatus: 'open'})
     .then(result => {
         res.status(200).json(result)
-        console.log(result)
+        
     })
     .catch(err => {
         console.log(err)
@@ -88,7 +88,7 @@ router.get('/getclosedorders', (req, res, next) => {
     Order.find({ orderstatus: 'closed' })
         .then(result => {
             res.status(200).json(result)
-            console.log(result)
+            
         })
         .catch(err => {
             console.log(err)
@@ -103,7 +103,7 @@ router.get('/getcustomerorders', (req, res, next) => {
     Order.find({ customerid: req.body.customerid })
         .then(result => {
             res.status(200).json(result)
-            console.log(result)
+            
         })
         .catch(err => {
             console.log(err)

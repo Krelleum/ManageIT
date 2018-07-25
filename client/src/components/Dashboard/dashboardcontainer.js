@@ -6,7 +6,8 @@ import OpenOrderCard from './openordercard';
 import HighPriorityCard from './highprioritycard';
 import MessageCard from './messagecard';
 import CustomerCard from './customercard';
-
+import CreateTimeStampCard from './createtimestampcard';
+import StatsCard from './statscard';
 
 
 import axios from 'axios';
@@ -62,6 +63,8 @@ componentDidMount(){
             <div className='row row2'>
                     <HighPriorityCard />
                     <MessageCard/> 
+                    <CreateTimeStampCard/>
+                    <StatsCard/>
             </div>
 
           
