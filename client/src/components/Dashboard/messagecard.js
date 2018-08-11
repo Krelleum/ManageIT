@@ -60,7 +60,7 @@ class MessageCard extends Component {
        
        
         return (
-            <div className='col-md-4 messagecard' onClick={this.redirectInbox.bind(this)}>
+            <div className='col-md-3 messagecard' onClick={this.redirectInbox.bind(this)}>
                 <i className="material-icons" id='messagecardicon'>mail</i>
                 <p>You've got</p>
                 <h2>{this.state.data.messages && this.state.data.messages.length}</h2>

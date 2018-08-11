@@ -59,7 +59,7 @@ componentDidMount(){
     render() {
         return (
             <div className='col-md-2 createtimestampcard' onClick={this.patchTimeStamp.bind(this)}>
-                <i className="material-icons" id='openordercardicon' >assignment</i>
+                <i className="material-icons" id='openordercardicon' >assignment_ind</i>
                 
                 <h2>Customer Interaction</h2>
                 
